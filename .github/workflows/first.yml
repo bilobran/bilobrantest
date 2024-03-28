@@ -14,19 +14,20 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up JDK
-        uses: actions/setup-java@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '17'
+          distribution: 'zulu'
 
       - name: Install Maven
         run: sudo apt-get install maven -y
 
       - name: Clone Project
-        run: git clone https://github.com/yourusername/yourproject.git
+        run: git clone https://github.com/bilobran/bilobrantest.git
 
       - name: Change Directory
-        run: cd yourproject
+        run: cd .github/copyholder
 
       - name: Download Dependencies and Build Project
         run: |
